@@ -4,28 +4,14 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-    // 1. Wir definieren Makros, um die Parameter zu "verstecken"
-    macros {
-        bt_clr_mac: bt_clr_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>;
-        };
-        s_key_mac: s_key_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp S>;
-        };
-    };
-
-    behaviors {
-        // 2. Das Hold-Tap nutzt jetzt die Makros (0 Zellen nötig)
-        s_bt_clr: s_bt_clr {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            tapping-term-ms = <5000>; 
-            flavor = "tap-preferred";
-            bindings = <&bt_clr_mac>, <&s_key_mac>;
+    combos {
+        compatible = "zmk,combos";
+        
+        // Bluetooth-Reset: Backspace (3) und Enter (5) gleichzeitig drücken
+        combo_bt_clr {
+            timeout-ms = <50>;          // Zeitfenster für das Drücken beider Tasten
+            key-positions = <3 5>;      // Position 3 (Backspace) und 5 (Enter)
+            bindings = <&bt BT_CLR>;    // Aktion: Löscht Bluetooth-Profil
         };
     };
 
@@ -34,10 +20,10 @@
 
         default_layer {
             bindings = <
-                &s_bt_clr      &kp R          &kp F5
-                &kp BSPC       &kp G          &kp ENTER
-                &none          &mkp LCLK      &kp F11
-                &kp N1         &kp N2         &kp N3
+                &kp S          &kp R          &kp F5    // Positionen 0, 1, 2
+                &kp BSPC       &kp G          &kp ENTER // Positionen 3, 4, 5
+                &none          &mkp LCLK      &kp F11   // Positionen 6, 7, 8
+                &kp N1         &kp N2         &kp N3    // Positionen 9, 10, 11
             >;
         };
     };
