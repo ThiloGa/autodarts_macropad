@@ -21,7 +21,7 @@
         default_layer {
             bindings = <
                 &kp S          &kp R          &kp F5    // Positionen 0, 1, 2
-                &kp BSPC       &kp G          &kp ENTER // Positionen 3, 4, 5
+                &kp BSPC       &kp A          &kp ENTER // Positionen 3, 4, 5
                 &none          &mkp LCLK      &kp F11   // Positionen 6, 7, 8
                 &kp N1         &kp N2         &kp N3    // Positionen 9, 10, 11
             >;
