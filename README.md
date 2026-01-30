@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/Rendering.png?raw=true" alt="3D-Modell" width="800">
   
-  <h1>🎯 Autodarts Macropad</h1>
+  <h1>🎯 Macropad for Autodarts</h1>
   <p><b>✨ The ultimate DIY wireless companion for your Autodarts setup ✨</b></p>
   <p><i>A custom 12-key controller designed for seamless darts tracking.</i></p>
 
@@ -197,7 +197,7 @@
 <br><br>
 
 <div align="center">
-  <h1>🎯 Autodarts Zusatztastatur</h1>
+  <h1>🎯 Zusatztastatur für Autodarts</h1>
   <p><b>✨ Der ultimative kabellose Begleiter für dein Autodarts-Setup – Marke Eigenbau ✨</b></p>
   <p><i>Ein maßgeschneidertes 12-Tasten-Steuergerät für die professionelle Wurferfassung am Oche.</i></p>
 
