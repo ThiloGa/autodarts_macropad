@@ -134,43 +134,6 @@
 
 <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Row</th>
-      <th>Left ⬅️</th>
-      <th>Middle ⬆️</th>
-      <th>Right ➡️</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><b>Row 1</b></td>
-      <td>Start/Stop Board (S)</td>
-      <td>Reset Board (R)</td>
-      <td>Reload Webpage (F5)</td>
-    </tr>
-    <tr>
-      <td><b>Row 2</b></td>
-      <td>Undo Throw (Backspace)</td>
-      <td>Call AI Referee (A)</td>
-      <td>Next Throw (Enter)</td>
-    </tr>
-    <tr>
-      <td><b>Row 3</b></td>
-      <td><i>Free for Updates</i></td>
-      <td>Cancel "Removing Darts" (Click)</td>
-      <td>Toggle Fullscreen (F11)</td>
-    </tr>
-    <tr>
-      <td><b>Row 4</b></td>
-      <td>Switch Camera 1 (Key 1)</td>
-      <td>Switch Camera 2 (Key 2)</td>
-      <td>Switch Camera 3 (Key 3)</td>
-    </tr>
-  </tbody>
-</table>
-
 <hr />
 
 <h2 id="operation-en">💡 Operation & Troubleshooting</h2>
@@ -329,43 +292,6 @@
 </div>
 
 <br>
-
-<table>
-  <thead>
-    <tr>
-      <th>Reihe</th>
-      <th>Links ⬅️</th>
-      <th>Mitte ⬆️</th>
-      <th>Rechts ➡️</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><b>Reihe 1</b></td>
-      <td>Board Start/Stop (S)</td>
-      <td>Board zurücksetzen (R)</td>
-      <td>Webseite neu laden (F5)</td>
-    </tr>
-    <tr>
-      <td><b>Reihe 2</b></td>
-      <td>Wurf rückgängig (Rücktaste)</td>
-      <td>KI-Schiedsrichter rufen (A)</td>
-      <td>Nächster Wurf (Eingabe)</td>
-    </tr>
-    <tr>
-      <td><b>Reihe 3</b></td>
-      <td><i>Frei für Erweiterungen</i></td>
-      <td>"Darts entfernen" Abbruch (Linksklick)</td>
-      <td>Vollbild umschalten (F11)</td>
-    </tr>
-    <tr>
-      <td><b>Reihe 4</b></td>
-      <td>Kamera 1 (Taste 1)</td>
-      <td>Kamera 2 (Taste 2)</td>
-      <td>Kamera 3 (Taste 3)</td>
-    </tr>
-  </tbody>
-</table>
 
 <hr />
 
