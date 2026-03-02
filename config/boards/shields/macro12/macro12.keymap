@@ -130,10 +130,10 @@
         // -----------------------------------------------------------------
         numpad_layer {
             bindings = <
-                &kp N1         &kp N2          &kp N3         // Reihe 1: 1, 2, 3 (Ganz oben)
+                &kp N7         &kp N8          &kp N9         // Reihe 1: 1, 2, 3 (Ganz oben)
                 &kp N4         &kp N5          &kp N6         // Reihe 2: 4, 5, 6
-                &kp N7         &kp N8          &kp N9         // Reihe 3: 7, 8, 9
-                &kp ENTER      &kp N0          &to 0          // Reihe 4: Enter, Null (0), Zurück zu Layer 0!
+                &kp N1         &kp N2          &kp N3         // Reihe 3: 7, 8, 9
+                &kp N0         &to 0           &kp KP_COMMA   // Reihe 4: Enter, Null (0), Zurück zu Layer 0!
             >;
         };
     };
