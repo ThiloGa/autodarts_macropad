@@ -10,9 +10,14 @@
 
 / {
     macros {
+        // --- Makro für das Numpad (Taste senden + Auto-Zurück zu Layer 0) ---
+        mac_num: mac_num {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1>, <&kp 0>, <&to 0>;
+        };
+
         // --- Makros für die Darts-Korrektur (1x Klicken) ---
-        // Sendet das Zeichen zur Dart-Auswahl und wechselt dauerhaft in Layer 2 (Numpad)
-        
         mac_corr_1: mac_corr_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -33,6 +38,18 @@
     };
 
     behaviors {
+        // --- NEU: Hold-Tap Funktion als "Notausgang" für das Numpad ---
+        // Parameter 1 (Hold): &to (Wechselt Layer)
+        // Parameter 2 (Tap): &mac_num (Makro für Zahl senden + Zurück)
+        ht_exit: hold_tap_exit {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_EXIT";
+            #binding-cells = <2>;
+            flavor = "tap-preferred"; 
+            tapping-term-ms = <1000>; // Exakt 1000ms (1 Sekunde) gedrückt halten zum Abbrechen
+            bindings = <&to>, <&mac_num>;
+        };
+
         // --- Layer Switcher (System-Layer für 5s aktivieren per Doppelklick Combo) ---
         td_layer_tog: tap_dance_layer_tog {
             compatible = "zmk,behavior-tap-dance";
@@ -65,7 +82,7 @@
             label = "TD_DART1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mac_corr_1>, <&kp N1>; // 1x = Korrektur-Makro, 2x = Kamera 1
+            bindings = <&mac_corr_1>, <&kp N1>; 
         };
 
         td_dart2: tap_dance_dart2 {
@@ -73,7 +90,7 @@
             label = "TD_DART2";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mac_corr_2>, <&kp N2>; // 1x = Korrektur-Makro, 2x = Kamera 2
+            bindings = <&mac_corr_2>, <&kp N2>; 
         };
 
         td_dart3: tap_dance_dart3 {
@@ -81,7 +98,7 @@
             label = "TD_DART3";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mac_corr_3>, <&kp N3>; // 1x = Korrektur-Makro, 2x = Kamera 3
+            bindings = <&mac_corr_3>, <&kp N3>; 
         };
     };
 
@@ -114,7 +131,6 @@
 
         // -----------------------------------------------------------------
         // LAYER 1: System & Bluetooth (aktiviert durch Combo Doppelklick)
-        // Schließt sich nach 5 Sekunden oder nach einem Tastendruck automatisch!
         // -----------------------------------------------------------------
         system_layer {
             bindings = <
@@ -127,13 +143,14 @@
 
         // -----------------------------------------------------------------
         // LAYER 2: Reines Numpad für Korrektur (Handy-Layout)
+        // Normal tippen = Eingabe + Zurück. 1s Halten = Abbruch (ohne Eingabe zurück)!
         // -----------------------------------------------------------------
         numpad_layer {
             bindings = <
-                &kp N7         &kp N8          &kp N9         // Reihe 1: 1, 2, 3 (Ganz oben)
-                &kp N4         &kp N5          &kp N6         // Reihe 2: 4, 5, 6
-                &kp N1         &kp N2          &kp N3         // Reihe 3: 7, 8, 9
-                &kp N0         &to 0           &kp KP_COMMA   // Reihe 4: Enter, Null (0), Zurück zu Layer 0!
+                &ht_exit 0 N7    &ht_exit 0 N8     &ht_exit 0 N9    // Reihe 1: 1, 2, 3 (Ganz oben)
+                &ht_exit 0 N4    &ht_exit 0 N5     &ht_exit 0 N6    // Reihe 2: 4, 5, 6
+                &ht_exit 0 N1    &ht_exit 0 N2     &ht_exit 0 N3    // Reihe 3: 7, 8, 9
+                &ht_exit 0 N0    &ht_exit 0 KP_DOT &ht_exit 0 ENTER // Reihe 4: 0 (Miss), Punkt (25), Enter (Bull)
             >;
         };
     };
