@@ -14,7 +14,8 @@
         mac_num: mac_num {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&kp 0>, <&to 0>;
+            // HIER KORRIGIERT: MACRO_PLACEHOLDER ist Zwingend notwendig für Parameter
+            bindings = <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>, <&to 0>;
         };
 
         // --- Makros für die Darts-Korrektur (1x Klicken) ---
@@ -39,8 +40,6 @@
 
     behaviors {
         // --- NEU: Hold-Tap Funktion als "Notausgang" für das Numpad ---
-        // Parameter 1 (Hold): &to (Wechselt Layer)
-        // Parameter 2 (Tap): &mac_num (Makro für Zahl senden + Zurück)
         ht_exit: hold_tap_exit {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_EXIT";
@@ -136,8 +135,8 @@
             bindings = <
                 &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   // Reihe 1: Profile 1, 2, 3
                 &bt BT_CLR     &bt BT_CLR_ALL  &sys_reset     // Reihe 2: Profil löschen, Alle löschen, Neustart
-                &trans         &none           &trans         // Reihe 3: (Combo bleibt transparent), Flash-Modus, (Combo)
-                &to 0          &bootloader     &to 0          // Reihe 4: Ohne Funktion, Ohne Funktion, ZURÜCK ZU LAYER 0
+                &trans         &none           &trans         // Reihe 3: (Combo bleibt transparent), Leer, (Combo)
+                &to 0          &bootloader     &to 0          // Reihe 4: Zurück zu Layer 0, Flash-Modus, Zurück zu Layer 0
             >;
         };
 
@@ -147,9 +146,9 @@
         // -----------------------------------------------------------------
         numpad_layer {
             bindings = <
-                &ht_exit 0 N7    &ht_exit 0 N8     &ht_exit 0 N9    // Reihe 1: 1, 2, 3 (Ganz oben)
-                &ht_exit 0 N4    &ht_exit 0 N5     &ht_exit 0 N6    // Reihe 2: 4, 5, 6
-                &ht_exit 0 N1    &ht_exit 0 N2     &ht_exit 0 N3    // Reihe 3: 7, 8, 9
+                &ht_exit 0 N7    &ht_exit 0 N8     &ht_exit 0 N9       // Reihe 1: 1, 2, 3 (Ganz oben)
+                &ht_exit 0 N4    &ht_exit 0 N5     &ht_exit 0 N6       // Reihe 2: 4, 5, 6
+                &ht_exit 0 N1    &ht_exit 0 N2     &ht_exit 0 N3       // Reihe 3: 7, 8, 9
                 &ht_exit 0 N0    &ht_exit 0 KP_DOT &ht_exit 0 KP_ENTER // Reihe 4: 0 (Miss), Punkt (25), Enter (Bull)
             >;
         };
