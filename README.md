@@ -132,6 +132,14 @@
   <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Key_Assignment.png?raw=true" alt="Keymap Assignment" width="800">
 </div>
 
+<div align="center">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Quick_Correction.png?raw=true" alt="Quick Corretion" width="800">
+</div>
+
+<div align="center">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Settings.png?raw=true" alt="Settings" width="800">
+</div>
+
 <br>
 
 <hr />
@@ -291,6 +299,14 @@
 
 <div align="center">
   <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Tastenbelegung.png?raw=true" alt="Tastenbelegung" width="800">
+</div>
+
+<div align="center">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Schnell-Korrektur.png?raw=true" alt="Schnell-Korrekur" width="800">
+</div>
+
+<div align="center">
+  <img src="https://github.com/mrcl-rckl/autodarts_macropad/blob/main/readme-images/0_Einstellungen.png?raw=true" alt="Einstellungen" width="800">
 </div>
 
 <br>
