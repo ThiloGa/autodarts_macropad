@@ -122,7 +122,7 @@
         default_layer {
             bindings = <
                 &kp S          &kp F5          &kp F11     // Reihe 1: Shortcuts
-                &td_h_j        &mkp LCLK       &td_k_l     // Reihe 2: H/J, Maus, K/L
+                &td_h_j        &kp R           &td_k_l     // Reihe 2: H/J, R, K/L
                 &kp BSPC       &kp A           &kp ENTER   // Reihe 3: Backspace, A, Enter
                 &td_dart1      &td_dart2       &td_dart3   // Reihe 4: 1x Tippen = Korrektur-Modus, 2x Tippen = Kamera 1-3
             >;
